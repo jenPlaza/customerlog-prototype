@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>Pantry Active Queue</title>
+    <link rel="stylesheet" href="./assets/css/clQueue.css" />
+    <link rel="stylesheet" href="./assets/css/clReusable.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Active Pantry Orders (Log View)</h1>
+      <p>
+        Below are the current orders from the Log tab. Click any link to open
+        the pantry order card.
+      </p>
+    </header>
+    <hr />
+    <main>
+      <ol id="primary-queue" class="queue-list">
+        <li>Loading active queue...</li>
+      </ol>
+    </main>
+    <script type="text/javascript" src="./assets/js/apiKey.js"></script>
+    <script
+      type="text/javascript"
+      src="./assets/js/ clQueue_GSheets.js"
+    ></script>
+  </body>
+</html>
