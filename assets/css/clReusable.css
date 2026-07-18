@@ -22,6 +22,9 @@ body {
   width: 100%;
   max-width: 100vw;
   overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 60px;
 }
 body {
   font-family: 'Segoe UI', Arial, sans-serif;
@@ -30,7 +33,7 @@ body {
 }
 h1 {
   font:
-    normal normal bold 40px/1.4 'Segoe UI',
+    normal normal bold 40px/1.2 'Segoe UI',
     serif;
   margin: 5px 0 0 0;
 }
@@ -57,11 +60,18 @@ p {
 .card {
   border-radius: 12px;
   background: var(--card-background);
-  font-size: 18px;
+  font-size: 15px;
   border: 1px solid #e2e8f0;
   box-shadow:
     0 10px 15px -3px rgba(0, 0, 0, 0.05),
     0 4px 6px -4px rgba(0, 0, 0, 0.05);
+}
+.label {
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--secondary-lable);
+  font-weight: 700;
+  margin-bottom: 6px;
 }
 footer {
   padding: 3%;
@@ -75,4 +85,22 @@ button {
   border-radius: 12px;
   cursor: pointer;
   width: 100%;
+}
+.site-footer {
+  padding: 0 20px;
+  margin-top: 40px;
+  font-size: 0.9rem;
+  color: var(--secondary-lable);
+  border-top: 1px solid #eaeaea;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  white-space: nowrap;
+}
+
+.designer-name a {
+  color: var(--primary-lable);
+  text-decoration: none;
 }

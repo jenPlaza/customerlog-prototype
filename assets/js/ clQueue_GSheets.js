@@ -1,9 +1,9 @@
-// CONFIGURATION: Points directly to your SPREADSHEET and your LOG tab
-const SHEET_NAME = 'Log'; // Pointing explicitly to your Log tab
+// CONFIGURATION: Pointing to SPREADSHEET and to LOG tab
+const SHEET_NAME = 'Log';
 
 async function fetchActiveQueue() {
   const queueElement = document.getElementById('primary-queue');
-  // Grabbing columns A to G from Log tab (matches your script's 7 columns)
+  // Grabbing columns A to G from Log tab
   const sheetsUrl = `https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/${SHEET_NAME}!A:G?key=${API_KEY}`;
 
   try {
@@ -23,7 +23,7 @@ async function fetchActiveQueue() {
 
     let activeCount = 0;
 
-    // Loop through your Log rows (skipping headers, assuming data starts lower down)
+    // Looping through Log rows (no headers)
     // Using index 1 to safely check all entries logged
     for (let i = 1; i < rows.length; i++) {
       const row = rows[i];
@@ -33,7 +33,7 @@ async function fetchActiveQueue() {
       const firstName = row[1] || ''; // Column B
       const lastName = row[2] || ''; // Column C
       const name = `${firstName} ${lastName}`.trim();
-      const status = row[3]; // Column D ("Inprogress")
+      const status = row[4]; // Column D ("Inprogress")
 
       // ONLY display if status is exactly "Inprogress" on the Log sheet
       if (status && status.toLowerCase().trim() === 'inprogress') {
@@ -43,7 +43,7 @@ async function fetchActiveQueue() {
         const li = document.createElement('li');
         li.className = 'queue-card card';
 
-        // Build the clickable link pointing to your pantryorder card file
+        // Build the clickable link pointing to pantryorder card file
         li.innerHTML = `
                             <a class="queue-link" href="pantryorder.html?id=${id}" target="_blank">
                                 Open Pantry Order #${id} - ${name}

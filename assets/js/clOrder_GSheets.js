@@ -1,4 +1,4 @@
-// CONFIGURATION: Points to your Google Sheet and explicitly targets the Pantry tab out to AJ
+// CONFIGURATION: Pointing to SPREADSHEET and to tab out to col AJ
 const SHEET_NAME = 'Pantry';
 
 // 1. Automatically grab the ID out of the browser address bar (?id=XXXX)
@@ -58,7 +58,7 @@ async function loadStaticProfile() {
           householdDisplay = householdRaw; // Fallback if it's not formatted with a slash
         }
 
-        // 4. Inject core identity and household metrics into your card headers
+        // 4. Inject core identity and household metrics into card headers
         document.getElementById('view-id').innerText =
           `Pantry Order #${currentId}`;
         document.getElementById('view-name').innerText =
@@ -68,7 +68,7 @@ async function loadStaticProfile() {
           document.getElementById('status-pill').innerText = rosterStatus;
         }
 
-        // Custom target for your household info display block
+        // Custom target for household info display
         if (document.getElementById('view-household')) {
           document.getElementById('view-household').innerText =
             householdDisplay;
@@ -85,7 +85,6 @@ async function loadStaticProfile() {
           if (cellValue && cellValue.toString().trim() !== '') {
             const columnName =
               headers[j] || `Column ${String.fromCharCode(65 + j)}`;
-            // itemsHTML += `<li style="margin-bottom: 8px;"><strong>${columnName}:</strong> ${cellValue}</li>`;
             itemsHTML += `<li style="margin-bottom: 8px;"><strong>${columnName}</strong></li>`;
             customDataFound = true;
           }

@@ -7,13 +7,6 @@
   margin-bottom: 20px;
   padding: 0 3%;
 }
-.label {
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  color: var(--secondary-lable);
-  font-weight: 700;
-  margin-bottom: 6px;
-}
 .items-list {
   padding: 15px;
   margin-top: 5px;
