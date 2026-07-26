@@ -45,7 +45,6 @@ main footer {
   margin-bottom: 5%;
   padding: 0 3%;
 }
-/*-----------------------Media Queries ----*/
 @media screen and (min-width: 576px) {
   header {
     height: 7rem;

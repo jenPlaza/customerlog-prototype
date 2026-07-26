@@ -121,7 +121,6 @@ nav ul li a:hover {
   font-weight: 700;
   margin-bottom: 25px;
 }
-
 button {
   margin-bottom: 5px;
   padding: 8px 12px;
@@ -136,7 +135,6 @@ main {
   flex: 1;
   position: relative;
 }
-
 footer {
   display: flex;
   flex-flow: column wrap;
@@ -153,7 +151,6 @@ footer div:first-of-type {
   flex-direction: column;
   background-color: var(--body-background);
 }
-
 footer div section {
   height: 35px;
   display: flex;
@@ -174,7 +171,6 @@ footer ul li {
 footer ul li:nth-of-type(3) {
   margin-right: 0;
 }
-/* -------designer signature -------------*/
 .site-footer {
   justify-content: center;
   white-space: nowrap;
@@ -190,8 +186,6 @@ span.designer-name a {
   color: var(--to-jenn-plaza);
   font-weight: 400;
 }
-/*-----------------------Media Queries ----*/
-
 @media screen and (min-width: 768px) {
   figure.logo {
     width: 20%;
@@ -218,7 +212,7 @@ span.designer-name a {
     margin: -100px 3% 5% 3%;
   }
   footer div {
-    padding: 0% 3%;
+    padding: 0 3%;
   }
   footer div section {
     height: unset;

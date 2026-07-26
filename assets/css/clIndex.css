@@ -31,7 +31,6 @@ main section {
 main section p {
   padding-left: 7%;
 }
-/*-----------------------Media Queries ----*/
 @media screen and (min-width: 768px) {
   main {
     margin: 0 3% 4% 3%;
