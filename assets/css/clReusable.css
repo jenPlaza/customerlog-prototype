@@ -1,14 +1,16 @@
 :root {
   --card-background: #ffffff;
-  --font: #000000;
-  --body-background: #f4f6f9;
-  --light-border: hsl(0, 0%, 92%);
-  --red: #db3739;
-  --link: #0066cc;
+  --font: #333;
+  --green: #0a6930;
+  --blue: #055bae;
   --status: #e67e22;
-  --division-border: #f1f5f9;
-  --primary-lable: #64748b;
-  --secondary-lable: #94a3b8;
+  --red: #eb3b21;
+  --body-background: #ebf5fe;
+  --division-border: #d7ebfe;
+  --dark-border: #c4e1fd;
+  --light-border: hsl(0, 0%, 92%);
+  --secondary-lable: #9ccaf1;
+  --to-jenn-plaza: #59c2a9;
 }
 *,
 *::before,
@@ -18,32 +20,39 @@
 html,
 body {
   margin: 0;
-  padding: 3%;
+  padding: 0;
   width: 100%;
   max-width: 100vw;
   overflow-x: hidden;
   position: relative;
   min-height: 100vh;
-  padding-bottom: 60px;
 }
 body {
   font-family: 'Segoe UI', Arial, sans-serif;
-  background-color: var(--body-background);
   color: var(--font);
+  display: flex;
+  flex-direction: column;
 }
 h1 {
   font:
-    normal normal bold 40px/1.2 'Segoe UI',
+    normal normal bold 55px/1 'Playfair Display',
     serif;
   margin: 5px 0 0 0;
 }
-header {
-  padding: 1% 3%;
+h2 {
+  font:
+    normal normal 300 25px/1.2 'Roboto',
+    serif;
+}
+h4 {
+  font: normal normal 300 15px/1.2 'Roboto';
+}
+h5 {
+  font: normal normal 300 13px/1.2 'Roboto';
 }
 p {
-  font-size: 20px;
-  margin-bottom: -3px;
-  overflow-wrap: break-word;
+  font: normal normal 300 16px/1.2 'Roboto';
+  white-space: normal;
 }
 .xsFont {
   font-size: x-small;
@@ -51,12 +60,51 @@ p {
 .xxsFont {
   font-size: xx-small;
 }
-
-.header {
-  border-bottom: 2px solid var(--division-border);
-  margin-bottom: 25px;
+header {
+  margin: 3% 3% 0 3%;
+  z-index: 10;
+  position: relative;
+  height: 50px;
 }
-
+header div.container {
+  display: flex;
+  justify-content: space-between;
+}
+header > section {
+  padding: 1% 3%;
+}
+header figure {
+  margin: 0;
+}
+figure.logo {
+  width: 33%;
+  z-index: 5;
+}
+img:not(.logo) {
+  width: 100%;
+  height: 100%;
+}
+nav {
+  display: flex;
+  width: 150px;
+}
+nav ul {
+  display: flex;
+  margin: 3%;
+  list-style: none;
+  justify-content: space-between;
+  width: 100%;
+}
+nav ul li a {
+  margin-right: 10px;
+  text-decoration: none;
+  color: var(--font);
+  font: normal normal bold 15px/1.2 'Roboto';
+}
+nav ul li a:hover {
+  color: var(--status);
+  text-decoration: underline;
+}
 .card {
   border-radius: 12px;
   background: var(--card-background);
@@ -71,36 +119,117 @@ p {
   letter-spacing: 0.5px;
   color: var(--secondary-lable);
   font-weight: 700;
-  margin-bottom: 6px;
+  margin-bottom: 25px;
 }
-footer {
-  padding: 3%;
-}
+
 button {
   margin-bottom: 5px;
   padding: 8px 12px;
   background-color: var(--red);
-  color: var(--body-background);
+  color: var(--card-background);
   border: none;
   border-radius: 12px;
   cursor: pointer;
   width: 100%;
 }
-.site-footer {
-  padding: 0 20px;
-  margin-top: 40px;
-  font-size: 0.9rem;
-  color: var(--secondary-lable);
-  border-top: 1px solid #eaeaea;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: auto;
-  white-space: nowrap;
+main {
+  flex: 1;
+  position: relative;
 }
 
-.designer-name a {
-  color: var(--primary-lable);
+footer {
+  display: flex;
+  flex-flow: column wrap;
+  padding-top: 3%;
+  position: static;
+  width: 100%;
+}
+footer div {
+  place-items: center;
+  padding: 1% 3%;
+}
+footer div:first-of-type {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--body-background);
+}
+
+footer div section {
+  height: 35px;
+  display: flex;
+  align-items: center;
+}
+footer ul {
+  list-style: none;
+  display: flex;
+  justify-content: end;
+  padding: 0;
+  margin: 10px 0;
+}
+footer ul li {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+footer ul li:nth-of-type(3) {
+  margin-right: 0;
+}
+/* -------designer signature -------------*/
+.site-footer {
+  justify-content: center;
+  white-space: nowrap;
+  font-family: playfair display;
+  color: var(--body-background);
+  background-color: var(--blue);
+}
+span.designer-name a {
+  color: var(--division-border);
   text-decoration: none;
+}
+.designer-name a:hover {
+  color: var(--to-jenn-plaza);
+  font-weight: 400;
+}
+/*-----------------------Media Queries ----*/
+
+@media screen and (min-width: 768px) {
+  figure.logo {
+    width: 20%;
+  }
+  footer div:first-of-type {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  footer div section {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 992px) {
+  figure.logo {
+    width: 17%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  figure.logo {
+    width: 12%;
+  }
+  main {
+    margin: -100px 3% 5% 3%;
+  }
+  footer div {
+    padding: 0% 3%;
+  }
+  footer div section {
+    height: unset;
+  }
+  footer ul {
+    padding: unset;
+    margin: 0;
+  }
+}
+@media screen and (min-width: 1600px) {
+  figure.logo {
+    width: 10%;
+  }
 }

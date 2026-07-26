@@ -6,39 +6,108 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
-    <title>Pantry Active Queue</title>
-    <link rel="stylesheet" href="./assets/css/clQueue.css" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; connect-src 'self' data: blob: https://sheets.googleapis.com; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:;"
+    />
+    <title>Community Wellness</title>
+    <link rel="icon" href="data:," />
     <link rel="stylesheet" href="./assets/css/clReusable.css" />
+    <link rel="stylesheet" href="./assets/css/clIndex.css" />
   </head>
   <body>
-    <header>
-      <h1>Active Pantry Orders</h1>
-      <p class="label xxsFont">(Log View)</p>
-      <p>
-        Below are the current orders from the Log tab. Click any link to open
-        the pantry order card.
-      </p>
+    <header class="scroll-in-place">
+      <div class="container">
+        <figure class="logo">
+          <img
+            src="./assets/images/communitywellness-logo.png"
+            id="logo"
+            alt="Community Wellness logo"
+            width="15%"
+            height="15%"
+          />
+        </figure>
+        <nav id="menu" style="display: block">
+          <ul>
+            <li>
+              <a href="./index.html" name="home" target="_blank"> Home</a>
+            </li>
+            <li>
+              <a href="./queue.html" name="queue" target="_blank"> Queue</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
-    <hr />
     <main>
-      <ol id="primary-queue" class="queue-list">
-        <li>Loading active queue...</li>
-      </ol>
+      <div class="container">
+        <ul>
+          <li><img src="./assets/images/feeding.jpeg" alt="image 1" /></li>
+          <li><img src="./assets/images/pantry.jpeg" alt="image 2" /></li>
+          <li>
+            <img src="./assets/images/team.jpeg" alt="image 3" />
+          </li>
+        </ul>
+        <section>
+          <h1>Community Wellness</h1>
+          <h2>Starts with Kindness, Engagement, & Support</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+            erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+            et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+            Lorem ipsum dolor sit amet. At vero.
+          </p>
+        </section>
+        <ul>
+          <li><img src="./assets/images/homeless.jpeg" alt="image 1" /></li>
+          <li><img src="./assets/images/group.jpeg" alt="image 2" /></li>
+          <li><img src="./assets/images/kitchen.jpeg" alt="image 3" /></li>
+        </ul>
+      </div>
     </main>
-    <footer class="site-footer">
-      <p class="xxsFont">
-        Created and Crafted by
-        <span class="designer-name"
-          ><a href="https://jennplaza.wordpress.com/skill-set/" target="_blank"
-            >Jenn Plaza</a
-          ></span
-        >
-      </p>
+    <footer>
+      <div>
+        <section>
+          <h4>&copy; 2026 Community Wellness.</h4>
+        </section>
+        <section>
+          <h4>407-234-5690</h4>
+        </section>
+        <ul>
+          <li>
+            <img src="./assets/images/facebook-bk.png" alt="facebook icon" />
+          </li>
+          <li>
+            <img src="./assets/images/instagram-bk.png" alt="instagram icon" />
+          </li>
+          <li>
+            <img src="./assets/images/linkedin-bk.png" alt="linkedIn icon" />
+          </li>
+        </ul>
+      </div>
+      <!-- Designer Footer Section with Schema Microdata -->
+      <div class="site-footer" itemscope itemtype="https://schema.org">
+        <p class="xxsFont">
+          Created and Crafted by
+          <span class="designer-name"
+            ><a
+              href="https://jennplaza.wordpress.com/skill-set/"
+              target="_blank"
+              itemprop="creator"
+              itemscope
+              itemtype="https://schema.org"
+              itemprop="name"
+              >Jenn Plaza</a
+            ></span
+          >
+        </p>
+      </div>
     </footer>
     <script type="text/javascript" src="./assets/js/apiKey.js"></script>
     <script
       type="text/javascript"
-      src="./assets/js/ clQueue_GSheets.js"
+      src="./assets/js/clQueue_GSheets.js"
     ></script>
   </body>
 </html>

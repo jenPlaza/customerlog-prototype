@@ -1,3 +1,14 @@
+header {
+  height: 5rem;
+}
+main {
+  padding: 5%;
+}
+.header {
+  border-bottom: 2px solid var(--division-border);
+  margin-bottom: 25px;
+  height: 8rem;
+}
 .order-card {
   max-width: 765px;
   margin: 0 auto;
@@ -13,7 +24,7 @@
   overflow-wrap: break-word;
 }
 .ticket-number {
-  color: var(--primary-lable);
+  color: var(--blue);
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: bold;
@@ -28,4 +39,46 @@
 #message {
   text-align: center;
   margin-top: 40px;
+}
+main footer {
+  padding-top: 0;
+  margin-bottom: 5%;
+  padding: 0 3%;
+}
+/*-----------------------Media Queries ----*/
+@media screen and (min-width: 576px) {
+  header {
+    height: 7rem;
+  }
+  .header {
+    height: 5rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  header {
+    height: 5rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  header {
+    height: 10rem;
+  }
+  main {
+    padding-bottom: 0;
+  }
+}
+@media screen and (min-width: 1400px) {
+  main {
+    margin-bottom: 3%;
+  }
+}
+@media screen and (min-width: 1600px) {
+  header {
+    height: 11rem;
+  }
+}
+@media screen and (min-width: 2000px) {
+  header {
+    height: 11rem;
+  }
 }

@@ -1,4 +1,3 @@
-// CONFIGURATION: Pointing to SPREADSHEET and to LOG tab
 const SHEET_NAME = 'Log';
 
 async function fetchActiveQueue() {
@@ -35,15 +34,15 @@ async function fetchActiveQueue() {
       const name = `${firstName} ${lastName}`.trim();
       const status = row[4]; // Column D ("Inprogress")
 
-      // ONLY display if status is exactly "Inprogress" on the Log sheet
+      // ONLY displays if status is exactly "Inprogress" on the Log sheet
       if (status && status.toLowerCase().trim() === 'inprogress') {
         activeCount++;
 
-        // Create the list item element
+        // Creating the list item element
         const li = document.createElement('li');
         li.className = 'queue-card card';
 
-        // Build the clickable link pointing to pantryorder card file
+        // link to pantry order
         li.innerHTML = `
                             <a class="queue-link" href="pantryorder.html?id=${id}" target="_blank">
                                 Open Pantry Order #${id} - ${name}
@@ -66,7 +65,7 @@ async function fetchActiveQueue() {
   }
 }
 
-// Run immediately on page load
+// Runs immediately on page load
 fetchActiveQueue();
 
 // Auto-refresh every 30 seconds to automatically pull new "Inprogress" Log entries

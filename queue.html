@@ -2,14 +2,18 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <!-- Added user-scalable=no to force the browser to respect 100% lock bounds -->
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
-    <title>Pantry Order Viewer</title>
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; connect-src 'self' data: blob: https://sheets.googleapis.com; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:;"
+    />
+    <title>Pantry Active Queue</title>
+    <link rel="icon" href="data:," />
     <link rel="stylesheet" href="./assets/css/clReusable.css" />
-    <link rel="stylesheet" href="./assets/css/clOrders.css" />
+    <link rel="stylesheet" href="./assets/css/clQueue.css" />
   </head>
   <body>
     <header class="scroll-in-place">
@@ -35,43 +39,19 @@
         </nav>
       </div>
     </header>
+    <section>
+      <h1>Active Pantry Orders</h1>
+      <p class="label xxsFont">(Log View)</p>
+      <p>
+        Below are the current orders from the Log tab. Click any link to open
+        the pantry order card.
+      </p>
+    </section>
+    <hr />
     <main>
-      <div class="order-card card" id="profile-card" style="display: none">
-        <!-- header section -->
-        <header class="header">
-          <div class="ticket-number xxsFont" id="view-id">
-            Pantry Order #0000
-          </div>
-          <h1 id="view-name">Loading Name...</h1>
-        </header>
-        <!-- Household section -->
-        <div class="data-section">
-          <p>
-            <strong>Household Size:</strong>
-            <span id="view-household">Loading...</span>
-          </p>
-        </div>
-        <!-- Item List section -->
-        <div class="data-section">
-          <p class="label xxsFont">Assigned Items & Equipment</p>
-          <div class="card value items-list" id="view-items">-</div>
-        </div>
-        <!-- Active / Inactive Status section -->
-        <div class="data-section">
-          <p class="label xxsFont">Current Status</p>
-          <div id="view-status">
-            <span id="status-pill" class="xsFont">Pending</span>
-          </div>
-        </div>
-        <!-- Close Button section-->
-        <footer>
-          <button onclick="closeWorkOrderCard()">
-            Close Pantry Order View
-          </button>
-        </footer>
-      </div>
-      <!-- Status Message (Hidden once data loads) -->
-      <div id="message" class="xxsFont">Reading link parameters...</div>
+      <ol id="primary-queue" class="queue-list">
+        <li>Loading active queue...</li>
+      </ol>
     </main>
     <footer>
       <div>
@@ -114,7 +94,7 @@
     <script type="text/javascript" src="./assets/js/apiKey.js"></script>
     <script
       type="text/javascript"
-      src="./assets/js/clOrder_GSheets.js"
+      src="./assets/js/clQueue_GSheets.js"
     ></script>
   </body>
 </html>

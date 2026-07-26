@@ -1,7 +1,6 @@
-// CONFIGURATION: Pointing to SPREADSHEET and to tab out to col AJ
 const SHEET_NAME = 'Pantry';
 
-// 1. Automatically grab the ID out of the browser address bar (?id=XXXX)
+// 1. Automatically grabs the ID out of the browser address bar (?id=XXXX)
 const urlParams = new URLSearchParams(window.location.search);
 const targetID = urlParams.get('id');
 
@@ -17,8 +16,8 @@ async function loadStaticProfile() {
 
   messageElement.innerText = 'Fetching profile details from Pantry...';
 
-  // Fetching columns A through AJ, starting at Row 5 for headers
-  const sheetsUrl = `https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/${SHEET_NAME}!A5:AJ?key=${API_KEY}`;
+  // Fetching columns A through AK, starting at Row 5 for headers
+  const sheetsUrl = `https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/${SHEET_NAME}!A5:AK?key=${API_KEY}`;
 
   try {
     const response = await fetch(sheetsUrl);
@@ -32,11 +31,11 @@ async function loadStaticProfile() {
       return;
     }
 
-    // Extract headers from row 5
+    // Extracting headers from row 5
     const headers = rows[0];
     let matchFound = false;
 
-    // 2. Loop through the data rows to find a matching ID
+    // 2. Looping through the data rows to find a matching ID
     for (let i = 1; i < rows.length; i++) {
       const row = rows[i];
       const currentId = row[0]; // ID is in Column A
@@ -55,10 +54,10 @@ async function loadStaticProfile() {
           const children = parts[1] ? parts[1].trim() : '0';
           householdDisplay = `${adults} Adults, ${children} Children`;
         } else if (householdRaw) {
-          householdDisplay = householdRaw; // Fallback if it's not formatted with a slash
+          householdDisplay = householdRaw; // Fallingback if it's not formatted with a slash
         }
 
-        // 4. Inject core identity and household metrics into card headers
+        // 4. Injecting name,Id, and household metrics into card headers
         document.getElementById('view-id').innerText =
           `Pantry Order #${currentId}`;
         document.getElementById('view-name').innerText =
@@ -74,7 +73,7 @@ async function loadStaticProfile() {
             householdDisplay;
         }
 
-        // 5. DYNAMIC SECTION: Loop remaining items starting at Column F (index 5) out to AJ
+        // 5. DYNAMIC SECTION: Loop remaining items starting at Column g (index 5) out to Ak
         let itemsHTML = '<ul style="text-align: left; padding-left: 20px;">';
         let customDataFound = false;
 

@@ -1,8 +1,15 @@
 h1 {
-  margin-bottom: -15px !important;
+  margin-bottom: -7px !important;
+}
+header {
+  height: 4.5rem;
+}
+body > section {
+  padding: 5% 5% 0 5%;
 }
 main {
   padding: 1% 3%;
+  margin-top: -35px;
 }
 .queue-list {
   padding-left: 20px;
@@ -24,4 +31,17 @@ main {
   color: var(--status);
   font-weight: bold;
   margin-left: 10px;
+}
+@media screen and (min-width: 576px) {
+  header {
+    height: 6.5rem;
+  }
+  body > section {
+    white-space: nowrap;
+  }
+}
+@media screen and (min-width: 768px) {
+  header {
+    height: 4.5rem;
+  }
 }
