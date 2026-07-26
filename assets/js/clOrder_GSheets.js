@@ -1,6 +1,5 @@
-const SHEET_NAME = 'Pantry',
-  urlParams = new URLSearchParams(window.location.search),
-  targetID = urlParams.get('id');
+((urlParams = new URLSearchParams(window.location.search)),
+  (targetID = urlParams.get('id')));
 async function loadStaticProfile() {
   const e = document.getElementById('message'),
     t = document.getElementById('profile-card');

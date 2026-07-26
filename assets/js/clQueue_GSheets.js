@@ -1,4 +1,3 @@
-const SHEET_NAME = 'Log';
 async function fetchActiveQueue() {
   const e = document.getElementById('primary-queue');
   try {
