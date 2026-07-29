@@ -10,7 +10,7 @@ main {
   height: 8rem;
 }
 .order-card {
-  max-width: 765px;
+  max-width: 600px;
   margin: 0 auto;
   padding: 3%;
 }
@@ -46,22 +46,11 @@ main footer {
   padding: 0 3%;
 }
 @media screen and (min-width: 576px) {
-  header {
-    height: 7rem;
-  }
   .header {
     height: 5rem;
   }
 }
-@media screen and (min-width: 768px) {
-  header {
-    height: 5rem;
-  }
-}
 @media screen and (min-width: 1200px) {
-  header {
-    height: 10rem;
-  }
   main {
     padding-bottom: 0;
   }
@@ -69,15 +58,5 @@ main footer {
 @media screen and (min-width: 1400px) {
   main {
     margin-bottom: 3%;
-  }
-}
-@media screen and (min-width: 1600px) {
-  header {
-    height: 11rem;
-  }
-}
-@media screen and (min-width: 2000px) {
-  header {
-    height: 11rem;
   }
 }

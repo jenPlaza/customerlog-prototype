@@ -2,7 +2,7 @@ h1 {
   margin-bottom: -7px !important;
 }
 header {
-  height: 4.5rem;
+  height: 4rem;
 }
 body > section {
   padding: 5% 5% 0 5%;
@@ -17,7 +17,7 @@ main {
 .queue-card {
   margin: 10px 0;
   padding: 15px;
-  max-width: 765px;
+  max-width: 600px;
 }
 .queue-link {
   text-decoration: none;
@@ -33,15 +33,13 @@ main {
   margin-left: 10px;
 }
 @media screen and (min-width: 576px) {
-  header {
-    height: 6.5rem;
-  }
   body > section {
     white-space: nowrap;
   }
 }
-@media screen and (min-width: 768px) {
-  header {
-    height: 4.5rem;
+@media screen and (min-width: 1200px) {
+  body > section {
+    padding: 1% 5% 0 5%;
+    margin-top: 35px;
   }
 }
