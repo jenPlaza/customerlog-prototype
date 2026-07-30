@@ -30,6 +30,7 @@ main section {
 }
 main section p {
   padding-left: 7%;
+  margin-top: 0;
 }
 @media screen and (min-width: 768px) {
   main {
@@ -41,11 +42,13 @@ main section p {
   main ul > *:nth-child(2n-1):nth-last-of-type(1) {
     display: none;
   }
+  main section p {
+    padding-left: unset;
+  }
 }
 @media screen and (min-width: 1200px) {
   main section p {
-    width: 70%;
-    padding-left: unset;
+    width: 75%;
   }
   main ul > *:nth-child(2n-1):nth-last-of-type(1) {
     display: block;
