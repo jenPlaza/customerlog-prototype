@@ -40,9 +40,10 @@ of household members served.
 
 For a deeper dive into this project, explore the prototype at
 https://jenplaza.github.io/customerlog-prototype/. For insights into the design
-process, view the Adobe XD hifi wireframes [wireframes link]. Additionally, you
-can check out a 7-minute walkthrough of the Google workspace process on YouTube
-at [video link].
+process, view the Adobe XD hifi wireframes
+https://jennplaza.wordpress.com/wp-content/uploads/2026/07/communitywellness-hifi.png.
+Additionally, you can check out a 7-minute walkthrough of the Google workspace
+process on YouTube at [video link].
 
 ## About the Outreach Community Pantry at St. Andrews Catholic Church
 
